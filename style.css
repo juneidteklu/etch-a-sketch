@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+.container{
+    border: solid black;
+}
+
+.webpage-container{
+    width: 100%;
+    height: 100%;
+}
+
+.etch-squares{
+    width: 700px;
+    height: 700px;
+}

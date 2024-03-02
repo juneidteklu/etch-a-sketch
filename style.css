@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
 }
-
 body{
     width: 100vw;
     height: 100vh;
@@ -17,7 +16,16 @@ body{
     height: 100%;
 }
 
-.etch-squares{
+.etch-squares-container{
     width: 700px;
     height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.etch-square{
+    border: solid black;
+    border-width: 1px;
 }

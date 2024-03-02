@@ -32,6 +32,9 @@ body{
 .etch-square{
     border: solid black;
     border-width: 1px;
+} 
+.etch-square:hover{
+    background-color: black;
 }
 .inputs{
     display: flex;

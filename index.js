@@ -10,13 +10,14 @@
 */
 
 const etchSquaresContainerDimension = 700;
-let etchContainerDimension = prompt("Give a number between 0 and 100");
-
+const apply = document.querySelector(".apply");
+const reset = document.querySelector(".reset");
 const etchSquaresContainer = document.querySelector(".etch-squares-container");
 
-createIndividualSquares();
+apply.addEventListener("click", createIndividualSquares);
 
 function createIndividualSquares(){
+    const etchContainerDimension = document.querySelector("input").value;
     let totalNumOfSquares = etchContainerDimension * etchContainerDimension;
     let individualSquareDimension = etchSquaresContainerDimension / etchContainerDimension;
     
@@ -31,8 +32,13 @@ function createIndividualSquares(){
 
         i++;
     }
+}
 
+function deleteEtchSquares(){
 
+}
 
+function resetEtchColors(){
+    
 }
 

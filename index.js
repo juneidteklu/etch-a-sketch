@@ -14,12 +14,21 @@ const apply = document.querySelector(".apply");
 const reset = document.querySelector(".reset");
 const etchSquaresContainer = document.querySelector(".etch-squares-container");
 
+
 apply.addEventListener("click", createIndividualSquares);
 
 function createIndividualSquares(){
     const etchContainerDimension = document.querySelector("input").value;
     let totalNumOfSquares = etchContainerDimension * etchContainerDimension;
     let individualSquareDimension = etchSquaresContainerDimension / etchContainerDimension;
+
+    /* If etch-squares-container has children, run the deleteEtchSquares() to remove them
+    before populating with the new number of squares.
+        If there are no children, run the while loop below
+     */
+    if(etchSquaresContainer.firstElementChild){
+        deleteEtchSquares();
+    }
     
     let i = 0;
     while(i<totalNumOfSquares){
@@ -32,13 +41,17 @@ function createIndividualSquares(){
 
         i++;
     }
+    
 }
 
 function deleteEtchSquares(){
 
+while(etchSquaresContainer.firstElementChild){
+    etchSquaresContainer.removeChild(etchSquaresContainer.firstElementChild);
+}
 }
 
 function resetEtchColors(){
-    
+
 }
 

@@ -2,11 +2,9 @@ const etchSquaresContainerDimension = 700;
 const apply = document.querySelector(".apply");
 const reset = document.querySelector(".reset");
 const etchSquaresContainer = document.querySelector(".etch-squares-container");
-const etchSquaresNodeList = document.querySelectorAll(".etch-squares-container > *");
 
 
 apply.addEventListener("click", createIndividualSquares);
-console.log(etchSquaresNodeList);
 reset.addEventListener("click", resetEtchColors);
 
 etchSquaresContainer.addEventListener("mouseover", fillEtchSquares);
@@ -44,13 +42,17 @@ while(etchSquaresContainer.firstElementChild){
 }
 
 function resetEtchColors(){
+    const etchSquaresNodeList = document.querySelectorAll(".etch-squares-container > *");
     etchSquaresNodeList.forEach((eachSquare) => {
-        style.backgroundColor = "";
+        eachSquare.style.backgroundColor = "";
     })
     
 }
 
 function fillEtchSquares(){
+    if (event.target == etchSquaresContainer){
+        return;
+    }
     event.target.style.backgroundColor = "black";
 }
 

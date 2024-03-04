@@ -2,8 +2,11 @@ const etchSquaresContainerDimension = 700;
 const apply = document.querySelector(".apply");
 const reset = document.querySelector(".reset");
 const etchSquaresContainer = document.querySelector(".etch-squares-container");
+const colorPicker = document.querySelector(".color");
+let colorValue = "";
 
 
+colorPicker.addEventListener("input",updateColor)
 apply.addEventListener("click", createIndividualSquares);
 reset.addEventListener("click", resetEtchColors);
 
@@ -53,6 +56,10 @@ function fillEtchSquares(){
     if (event.target == etchSquaresContainer){
         return;
     }
-    event.target.style.backgroundColor = "black";
+    event.target.style.backgroundColor = colorValue;
+}
+
+function updateColor(){
+    colorValue =  colorPicker.value;
 }
 

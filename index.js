@@ -5,13 +5,10 @@ const etchSquaresContainer = document.querySelector(".etch-squares-container");
 const colorPicker = document.querySelector(".color");
 let colorValue = "";
 
-
-colorPicker.addEventListener("input",updateColor)
+etchSquaresContainer.addEventListener("mouseover", fillEtchSquares);
 apply.addEventListener("click", createIndividualSquares);
 reset.addEventListener("click", resetEtchColors);
-
-etchSquaresContainer.addEventListener("mouseover", fillEtchSquares);
-
+colorPicker.addEventListener("input",updateColor);
 
 function createIndividualSquares(){
         const etchContainerDimension = document.querySelector("input").value;
@@ -56,10 +53,11 @@ function fillEtchSquares(){
     if (event.target == etchSquaresContainer){
         return;
     }
-    event.target.style.backgroundColor = colorValue;
+    event.target.style.backgroundColor = colorPicker.value;
+    
 }
 
 function updateColor(){
-    colorValue =  colorPicker.value;
+    colorValue = colorPicker.value;
 }
 
